@@ -1,0 +1,6 @@
+.idea/
+python/__pycache__/
+python/logging/.idea/
+python/logging/Pipfile
+python/logging/module-logging/module2.pyc
+python/logging/mylib.pyc
