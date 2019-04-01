@@ -3,16 +3,16 @@ from twisted.internet import reactor, protocol
 
 class EchoClient(protocol.Protocol):
     def connectionMade(self):
-        self.transport.write("Hi From client")
+        self.transport.write("Hi From client".encode())
 
     def dataReceived(self, data):
         print('server said {}'.format(data))
-        self.transport.looseConnection()
+        # self.transport.looseConnection()
 
 
 class EchoFactory(protocol.ClientFactory):
     def buildProtocol(self, addr):
-        return EchoClient
+        return EchoClient()
 
     def clientConnectionFailed(self, connector, reason):
         print('Connection Failed')
